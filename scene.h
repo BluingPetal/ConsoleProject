@@ -2,9 +2,8 @@
 
 class scene
 {
-	// 도트 그림은 gotoxy()로 수정 가능하도록 public으로 선언
-public:
-	void startScene();
+protected:
+	void startScene(int num);
 	void elevatorOut(int floor);
 	void InsideClosed(int floor);
 	void HalfOpen1();
@@ -15,5 +14,9 @@ public:
 	void Inventory();
 	void Driver();
 	void Drink();
+	void Phone();
 };
 
+
+void gotoxy(int x, int y);
+void TextColor(int font, int background);
