@@ -1,5 +1,6 @@
 #include "scene.h";
 #include "CSceneStory.h"
+#include<iostream>
 #include<Windows.h>;
 
 // 객체를 만들기 위한 class가 아닌 코드 정리를 위한 class
@@ -12,7 +13,7 @@ int main()
 	//int startpoint = story.start(); // 메인 화면
 
 	story.floor1();
-	//story.floor2();
+	story.floor2();
 	//story.floor3();
 	//story.floor4();
 	//story.floor5();

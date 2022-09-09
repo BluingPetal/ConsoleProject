@@ -83,8 +83,6 @@ void scene::elevatorOut(int floor)
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
-	cout << "┃                                                                                                ┃\n";
-	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
 	gotoxy(49, 2); // 층수 찍을 위치
 	cout << floor << endl;
 }
@@ -155,8 +153,30 @@ void scene::Opened(int floor)
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
-	cout << "┃                                                                                                ┃\n";
-	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
+}
+
+void scene::isInElevator()
+{
+	int num = 7;
+	TextColor(BLACK, D_WHITE);
+	gotoxy(1, num++); cout << "***********    ┃     ";
+	gotoxy(1, num++); cout << "************** ┃     ";
+	gotoxy(1, num++); cout << "****************     ";
+	gotoxy(1, num++); cout << "*****************    ";
+	gotoxy(1, num++); cout << "*****************    ";
+	gotoxy(1, num++); cout << "******************   ";
+	gotoxy(1, num++); cout << "******************   ";
+	gotoxy(1, num++); cout << "*****************    ";
+	gotoxy(1, num++); cout << "***************┃     ";
+	gotoxy(1, num++); cout << "*************  ┃     ";
+	gotoxy(1, num++); cout << "*****************    ";
+	gotoxy(1, num++); cout << "******************   ";
+	gotoxy(1, num++); cout << "******************** ";
+	gotoxy(1, num++); cout << "*********************";
+	gotoxy(1, num++); cout << "*********************";
+	gotoxy(1, num++); cout << "*********************";
+	gotoxy(1, num++); cout << "*********************";
+	TextColor(D_WHITE, BLACK);
 }
 
 void scene::Cracked(int floor)

@@ -5,6 +5,7 @@
 #include<Windows.h>
 
 using namespace std;
+int depressed = 8;
 
 int CSceneStory::start()
 {
@@ -156,15 +157,77 @@ void CSceneStory::floor1()
 {
 	int next;
 	elevatorOut(1);
-	Sleep(300); gotoxy(20, 26); cout << "힘든 하루였어. 빨리 집으로 가야지."; if (_kbhit) next = _getch(); // 블로킹
-	Sleep(300); gotoxy(20, 26); cout << "아니 벌써 10시잖아? 도대체 직장에서 몇 시간이나 있었던거야?"; if (_kbhit) next = _getch();
-	Sleep(300); system("cls"); Sleep(1000); Opened(1);
-	Sleep(300); gotoxy(10, 26); cout << "?? : "; gotoxy(20, 26); cout << "이거 작성하시고.."; HalfOpen2(); Sleep(500); HalfOpen1();
-	Sleep(500); gotoxy(10, 26); cout << "나 : "; gotoxy(20, 26); cout << "??.. 뭐였지                "; InsideClosed(1); if (_kbhit) next = _getch();
+	gotoxy(1, 33); cout << "우울감 : "; for (int i = 0; i < depressed; i++) cout << "■";
+	Sleep(300); gotoxy(20, 26); cout << "힘든 하루였어. 빨리 집으로 가야지."; next = _getch(); // 블로킹
+	Sleep(300); gotoxy(20, 26); cout << "아니 벌써 10시잖아? 도대체 직장에서 몇 시간이나 있었던거야?"; next = _getch();
+	Sleep(300);
+	Inventory(); gotoxy(33, 9); cout << "인벤토리는 특별한 경우가 아니면"; gotoxy(32, 11); cout << "각 층 시작마다 한번씩 볼 수 있습니다.";
+	gotoxy(29, 15); cout << "층을 올라갈때마다 주인공은 우울감을 느낍니다. ";
+	gotoxy(32, 17); cout << "우울감을 떨어뜨릴 방법을 찾아주세요. "; next = _getch();
+	Sleep(300); system("cls"); Sleep(1000); Opened(1); gotoxy(1, 33); cout << "우울감 : "; for (int i = 0; i < depressed; i++) cout << "■";
+	Sleep(700); gotoxy(10, 26); cout << "?? : "; gotoxy(20, 26); cout << "이거 작성하시고..                                           "; HalfOpen2(); Sleep(700); HalfOpen1(); // 닫히는 동작
+	Sleep(700); gotoxy(10, 26); cout << "나 : "; gotoxy(20, 26); cout << "??.. 뭐였지                "; InsideClosed(1); next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나 : "; gotoxy(20, 26); cout << "우리 집은 7층이야. 7층으로 가자."; gotoxy(92, 9); TextColor(4, 7); cout << "⑦"; TextColor(7, 0); next = _getch(); //gotoxy(92, 9); TextColor(4, 7); cout << "⑦"; TextColor(7, 0);
+
 }
 
 void CSceneStory::floor2()
 {
+	int next; 
+	int ifkilled;
+	// 인벤토리 확인 여부
+	Sleep(300); gotoxy(10, 26); cout << "       "; gotoxy(20, 26);	cout << "                                                                   ";
+	gotoxy(20, 28);	cout << "                                                                   "; next = _getch();
+	gotoxy(0, 0);
+	InsideClosed(2); Sleep(500); HalfOpen1(); Sleep(500); HalfOpen2(); Sleep(500); system("cls"); Opened(2); gotoxy(92, 9); TextColor(4, 7); cout << "⑦"; TextColor(7, 0); // 열리는 동작 
+	gotoxy(1, 33); cout << "우울감 : "; for (int i = 0; i < depressed; i++) cout << "■";
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "안녕하세요! 올라가시나요?                                                 "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "응. 타게?                                                               "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "네! 아빠가 부르셔서 빨리 가봐야돼요.                                      "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "그래? 그럼 빨리 가봐야지.                                                "; next = _getch();
+	Sleep(500); HalfOpen2(); Sleep(500); HalfOpen1(); Sleep(500); InsideClosed(2); isInElevator();  gotoxy(85, 9); TextColor(4, 7); cout << "②"; TextColor(7, 0);// 닫히는 동작 
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "아빠는 저를 많이 싫어하세요. 엄마가 저 때문에 돌아가셨다고 하시거든요.       "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "...                                                                     "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "근데 저는 가족을 지키려고 했던 것 뿐이에요!                                "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "엄마랑 아빠는 몰라주셔서 속상해요.                                        "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "....다 아실거야                                                         "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "저도 아빠 싫어해요. 그래서 괜찮아요!                                      "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "근데 처음보는 사람한테 그런 말 하고다녀도 괜찮니?                          "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "저는 아저씨 처음보는거 아닌데요?                                          "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "내가 너를 처음보잖아.                                                    "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "아저씨도 저 아실텐데..                                                   "; next = _getch();
+	Sleep(500); HalfOpen1(); Sleep(500); HalfOpen2(); Sleep(500); system("cls"); Opened(2); gotoxy(92, 9); TextColor(4, 7); cout << "⑦"; TextColor(7, 0); // 열리는 동작
+	gotoxy(1, 33); cout << "우울감 : "; for (int i = 0; i < depressed; i++) cout << "■";
+	Sleep(300); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "아 도착했다! 내리기 싫은데.. 내려야겠죠..?                                "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "빨리 내려.                                                             "; next = _getch(); 
+	Sleep(300); gotoxy(10, 26); cout << "?? : "; gotoxy(20, 26);	cout << "어딜 싸돌아다니는거야!! 여기에만 갇혀 있으랬더니!!                        "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "?? : "; gotoxy(20, 26);	cout << "에휴 정신이나 멀쩡하면 말이나 말지.                                      "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "아...저                                                                "; next = _getch();
+	Sleep(700); gotoxy(10, 26); cout << "꼬마 : "; gotoxy(20, 26);	cout << "빨리 가세요! 다들 아저씨를 찾고 있는것 같아요.                            "; next = _getch();
+	Sleep(300); gotoxy(10, 26); cout << "나  : "; gotoxy(20, 26);	cout << "응?                                                                    "; next = _getch();
+	// 거미죽이기
+	Sleep(300); gotoxy(20, 28);	cout << "꼬마와 이야기해 우울감이 20 줄어들었다.                                  "; next = _getch(); 
+	gotoxy(1, 33); cout << "우울감 : "; for (int i = 0; i < depressed; i++) cout << "■"; cout << "      ";
+	Sleep(300); gotoxy(10, 26); cout << "      "; gotoxy(20, 26);	cout << "                                                                      ";
+	Sleep(300); gotoxy(20, 26);	cout << "거미가 기어다닌다....                                                   "; next = _getch();
+	Sleep(300); gotoxy(20, 26);	cout << "죽이시겠습니까? (1: 죽인다/ 2: 죽이지 않는다) : "; cin >> ifkilled;
+	if (ifkilled == 1)
+	{
+		depressed -= 10;
+		gotoxy(20, 27);
+		cout << "거미를 죽여 우울감이 10 떨어집니다.";
+	}
+	else if (ifkilled == 1)
+	{
+		gotoxy(20, 27);
+		cout << "거미를 죽이지 않았습니다.";
+	}
+	else
+	{
+		gotoxy(20, 27);
+		cout << "스킵합니다.";
+	}
+
 }
 
 void CSceneStory::floor3()

@@ -9,6 +9,7 @@ protected:
 	void HalfOpen1();
 	void HalfOpen2();
 	void Opened(int floor);
+	void isInElevator();
 	void Cracked(int floor);
 	void endScene();
 	void Inventory();
