@@ -2,6 +2,7 @@
 #include <iostream>
 #include <time.h>
 #include<conio.h>
+#include<Windows.h>
 
 using namespace std;
 
@@ -153,8 +154,13 @@ int CSceneStory::start()
 
 void CSceneStory::floor1()
 {
+	int next;
 	elevatorOut(1);
-	gotoxy(5, 26); cout << "힘든 하루였어. 빨리 집으로 가야지." << endl;
+	Sleep(300); gotoxy(20, 26); cout << "힘든 하루였어. 빨리 집으로 가야지."; if (_kbhit) next = _getch(); // 블로킹
+	Sleep(300); gotoxy(20, 26); cout << "아니 벌써 10시잖아? 도대체 직장에서 몇 시간이나 있었던거야?"; if (_kbhit) next = _getch();
+	Sleep(300); system("cls"); Sleep(1000); Opened(1);
+	Sleep(300); gotoxy(10, 26); cout << "?? : "; gotoxy(20, 26); cout << "이거 작성하시고.."; HalfOpen2(); Sleep(500); HalfOpen1();
+	Sleep(500); gotoxy(10, 26); cout << "나 : "; gotoxy(20, 26); cout << "??.. 뭐였지                "; InsideClosed(1); if (_kbhit) next = _getch();
 }
 
 void CSceneStory::floor2()

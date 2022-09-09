@@ -54,11 +54,11 @@ void scene::elevatorOut(int floor)
 	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
 	cout << "┃                                        ┏━━━━━━━━━━━━━━┓                                        ┃\n";
 	cout << "┃                                        ┃              ┃                                        ┃\n";
-	cout << "┃               ┏━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━┯━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┓     ____      ┃\n";
-	cout << "┃               ┃                                ┃                               ┃    /  ↑ ＼   ┃\n";
-	cout << "┃               ┃                                ┃                               ┃   / ↖┃    ＼ ┃\n";
-	cout << "┃               ┃                                ┃                               ┃   ＼        / ┃\n";
-	cout << "┃               ┃                                ┃                               ┃     ＼_____/  ┃\n";
+	cout << "┃               ┏━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┓    ******     ┃\n";
+	cout << "┃               ┃                                ┃                               ┃   *  ↑  *    ┃\n";
+	cout << "┃               ┃                                ┃                               ┃  * ↖│    *   ┃\n";
+	cout << "┃               ┃                                ┃                               ┃   *      *    ┃\n";
+	cout << "┃               ┃                                ┃                               ┃    ******     ┃\n";
 	cout << "┃               ┃                                ┃                               ┃               ┃\n";
 	cout << "┃               ┃                                ┃                               ┃               ┃\n";
 	cout << "┃               ┃                                ┃                               ┃               ┃\n";
@@ -85,36 +85,68 @@ void scene::elevatorOut(int floor)
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
 	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
-	gotoxy(50, 2); // 층수 찍을 위치
+	gotoxy(49, 2); // 층수 찍을 위치
 	cout << floor << endl;
 }
 
 void scene::InsideClosed(int floor)
 {
-	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n";
-	cout << "┃                                        ┏━━━━━━━━━━━━━━┓                                        ┃\n";
-	cout << "┃                                        ┃              ┃                                        ┃\n";
-	cout << "┃               ┏━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━┯━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┓               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┠━━━━━━━━━━━━━━━┫                                ┃                               ┠━━━━━━━━━━━━━━━┫\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃   ①     ⑥   ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃   ②     ⑦   ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃   ③     ⑧   ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃   ④     ⑨   ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃   ⑤     ⑩   ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┠━━━━━━━━━━━━━━━┫                                ┃                               ┃  ＜＞   ＞＜  ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┠━━━━━━━━━━━━━━━┫\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
-	cout << "┃               ┃                                ┃                               ┃               ┃\n";
+	for (int i = 0; i < 20; i++)
+	{
+		gotoxy(16, i + 4);
+		TextColor(BLACK, D_WHITE); cout << "┃                                ┃                              \n";
+	}
+	gotoxy(49, 2); // 층수 찍을 위치
+	cout << floor << endl;
+	TextColor(D_WHITE, BLACK);
+}
+
+void scene::HalfOpen1()
+{
+	for (int i = 0; i < 20; i++)
+	{
+		gotoxy(16, i + 4);
+		TextColor(BLACK, D_WHITE); cout << "┃                       ┃ "; TextColor(D_WHITE, BLACK); cout << "                "; TextColor(BLACK, D_WHITE); cout << "                       ┃\n";
+	}
+	TextColor(D_WHITE, BLACK);
+}
+
+void scene::HalfOpen2()
+{
+	for (int i = 0; i < 20; i++)
+	{
+		gotoxy(16, i + 4);
+		TextColor(BLACK, D_WHITE); cout << "┃             ┃ "; TextColor(D_WHITE, BLACK); cout << "                                     "; TextColor(BLACK, D_WHITE); cout << "            ┃\n";
+	}
+	TextColor(D_WHITE, BLACK);
+}
+
+void scene::Opened(int floor)
+{
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "                                                                                                 "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "                                        ┏━━━━━━━━━━━━━━┓                                         "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "                                        ┃       "; cout << floor; cout << "      ┃                                         "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┏━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┓                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "━━━━━━━━━━━━━━━┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┠━━━━━━━━━━━━━━━━"; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃   ①     ⑥    "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃   ②     ⑦    "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃   ③     ⑧    "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃   ④     ⑨    "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃   ⑤     ⑩    "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "━━━━━━━━━━━━━━━┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃  ＜＞   ＞＜   "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┠━━━━━━━━━━━━━━━━"; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
 	cout << "┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫\n";
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
@@ -125,40 +157,6 @@ void scene::InsideClosed(int floor)
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
 	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n";
-	gotoxy(50, 2); // 층수 찍을 위치
-	cout << floor << endl;
-}
-
-void scene::HalfOpen1()
-{
-	gotoxy(31, 3); cout << "━━━━━━━━━━━╋━━━━━━━━━━━━━━╋━━━━━━━━━━━━\n";
-	for (int i = 0; i < 20; i++)
-	{
-		gotoxy(31, i + 4);
-		cout << "           ┃              ┃            \n";
-	}
-}
-
-void scene::HalfOpen2()
-{
-	gotoxy(31, 3); cout << "┯━━━━━━━━━━┻━━━━━━━┯━━━━━━┻━━━━━━━━━━━┯\n";
-	for (int i = 0; i < 20; i++)
-	{
-		gotoxy(31, i + 4);
-		cout << "┃                  ┃                  ┃\n";
-	}
-}
-
-void scene::Opened(int floor)
-{
-	gotoxy(31, 3); cout << "━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━\n";
-	for (int i = 0; i < 20; i++)
-	{
-		gotoxy(31, i + 4);
-		cout << "                                       \n";
-	}
-	gotoxy(50, 2); // 층수 찍을 위치
-	cout << floor << endl;
 }
 
 void scene::Cracked(int floor)
@@ -264,7 +262,7 @@ void scene::Driver()
 	cout << " ┃         ▨▨  ┃\n";
 	cout << " ┃          ▨▨ ┃\n";
 	cout << " ┠━━━━━━━━━━━━━━━┫\n";
-	cout << " ┃               ┃\n";
+	cout << " ┃    드라이버   ┃\n";
 	cout << " ┗━━━━━━━━━━━━━━━┛\n";
 }			  
 
@@ -279,7 +277,7 @@ void scene::Drink()
 	cout << "┃    く___ノ    ┃\n";
 	cout << "┃               ┃\n";
 	cout << "┠━━━━━━━━━━━━━━━┫\n";
-	cout << "┃               ┃\n";
+	cout << "┃ 에너지 드링크 ┃\n";
 	cout << "┗━━━━━━━━━━━━━━━┛\n";
 }			 
 
@@ -294,7 +292,7 @@ void scene::Phone()
 	cout << "┃    ┠━━━━━━┫   ┃\n";
 	cout << "┃    ┗━━━━━━┛   ┃\n";
 	cout << "┠━━━━━━━━━━━━━━━┫\n";
-	cout << "┃               ┃\n";
+	cout << "┃     휴대폰    ┃\n";
 	cout << "┗━━━━━━━━━━━━━━━┛\n";
 }
 

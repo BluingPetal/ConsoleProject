@@ -17,6 +17,3 @@ public :
 	void floor10();
 	void end();
 };
-
-void control(int& input, int& num);
-void 
