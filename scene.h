@@ -21,3 +21,4 @@ protected:
 
 void gotoxy(int x, int y);
 void TextColor(int font, int background);
+

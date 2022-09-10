@@ -92,7 +92,7 @@ void scene::InsideClosed(int floor)
 	for (int i = 0; i < 20; i++)
 	{
 		gotoxy(16, i + 4);
-		TextColor(BLACK, D_WHITE); cout << "┃                                ┃                              \n";
+		TextColor(BLACK, D_WHITE); cout << "┃                                ┃                               \n";
 	}
 	gotoxy(49, 2); // 층수 찍을 위치
 	cout << floor << endl;
@@ -123,7 +123,7 @@ void scene::Opened(int floor)
 {
 	cout << " "; TextColor(BLACK, D_WHITE); cout << "                                                                                                 "; TextColor(D_WHITE, BLACK); cout << " \n";
 	cout << " "; TextColor(BLACK, D_WHITE); cout << "                                        ┏━━━━━━━━━━━━━━┓                                         "; TextColor(D_WHITE, BLACK); cout << " \n";
-	cout << " "; TextColor(BLACK, D_WHITE); cout << "                                        ┃       "; cout << floor; cout << "      ┃                                         "; TextColor(D_WHITE, BLACK); cout << " \n";
+	cout << " "; TextColor(BLACK, D_WHITE); cout << "                                        ┃              ┃                                         "; TextColor(D_WHITE, BLACK); cout << " \n";
 	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┏━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┓                "; TextColor(D_WHITE, BLACK); cout << " \n";
 	cout << " "; TextColor(BLACK, D_WHITE); cout << "               ┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┃                "; TextColor(D_WHITE, BLACK); cout << " \n";
 	cout << " "; TextColor(BLACK, D_WHITE); cout << "━━━━━━━━━━━━━━━┃ "; TextColor(D_WHITE, BLACK); cout << "                                                               "; TextColor(BLACK, D_WHITE); cout << "┠━━━━━━━━━━━━━━━━"; TextColor(D_WHITE, BLACK); cout << " \n";
@@ -153,6 +153,11 @@ void scene::Opened(int floor)
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
 	cout << "┃                                                                                                ┃\n";
+
+	TextColor(BLACK, D_WHITE);
+	gotoxy(49, 2); // 층수 찍을 위치
+	cout << floor << endl;
+	TextColor(D_WHITE, BLACK);
 }
 
 void scene::isInElevator()
@@ -273,47 +278,50 @@ void scene::Inventory()
 
 void scene::Driver()
 {
-	cout << " ┏━━━━━━━━━━━━━━━┓\n";
-	cout << " ┃ __            ┃\n";
-	cout << " ┃ ＼＼          ┃\n";
-	cout << " ┃   ＼＼        ┃\n";
-	cout << " ┃     ＼＼      ┃\n";
-	cout << " ┃        ▨▨   ┃\n";
-	cout << " ┃         ▨▨  ┃\n";
-	cout << " ┃          ▨▨ ┃\n";
-	cout << " ┠━━━━━━━━━━━━━━━┫\n";
-	cout << " ┃    드라이버   ┃\n";
-	cout << " ┗━━━━━━━━━━━━━━━┛\n";
+	int num = 8;
+	gotoxy(40, num++); cout << " ┏━━━━━━━━━━━━━━━┓\n";
+	gotoxy(40, num++); cout << " ┃ __            ┃\n";
+	gotoxy(40, num++); cout << " ┃ ＼＼          ┃\n";
+	gotoxy(40, num++); cout << " ┃   ＼＼        ┃\n";
+	gotoxy(40, num++); cout << " ┃     ＼＼      ┃\n";
+	gotoxy(40, num++); cout << " ┃        ▨▨   ┃\n";
+	gotoxy(40, num++); cout << " ┃         ▨▨  ┃\n";
+	gotoxy(40, num++); cout << " ┃          ▨▨ ┃\n";
+	gotoxy(40, num++); cout << " ┠━━━━━━━━━━━━━━━┫\n";
+	gotoxy(40, num++); cout << " ┃    드라이버   ┃\n";
+	gotoxy(40, num++); cout << " ┗━━━━━━━━━━━━━━━┛\n";
 }			  
 
 void scene::Drink()
 {
-	cout << "┏━━━━━━━━━━━━━━━┓\n";
-	cout << "┃     _____     ┃\n";
-	cout << "┃    (_____)    ┃\n";
-	cout << "┃    |    ┃|    ┃\n";
-	cout << "┃    |    ┃|    ┃\n";
-	cout << "┃    |    ┃|    ┃\n";
-	cout << "┃    く___ノ    ┃\n";
-	cout << "┃               ┃\n";
-	cout << "┠━━━━━━━━━━━━━━━┫\n";
-	cout << "┃ 에너지 드링크 ┃\n";
-	cout << "┗━━━━━━━━━━━━━━━┛\n";
+	int num = 8;
+	gotoxy(60, num++); cout << "┏━━━━━━━━━━━━━━━┓\n";
+	gotoxy(60, num++); cout << "┃     _____     ┃\n";
+	gotoxy(60, num++); cout << "┃    (_____)    ┃\n";
+	gotoxy(60, num++); cout << "┃    |    ┃|    ┃\n";
+	gotoxy(60, num++); cout << "┃    |    ┃|    ┃\n";
+	gotoxy(60, num++); cout << "┃    |    ┃|    ┃\n";
+	gotoxy(60, num++); cout << "┃    く___ノ    ┃\n";
+	gotoxy(60, num++); cout << "┃               ┃\n";
+	gotoxy(60, num++); cout << "┠━━━━━━━━━━━━━━━┫\n";
+	gotoxy(60, num++); cout << "┃ 에너지 드링크 ┃\n";
+	gotoxy(60, num++); cout << "┗━━━━━━━━━━━━━━━┛\n";
 }			 
 
 void scene::Phone()
 {
-	cout << "┏━━━━━━━━━━━━━━━┓\n";
-	cout << "┃               ┃\n";
-	cout << "┃    ┏━━━━━━┫   ┃\n";
-	cout << "┃    ┃      ┃   ┃\n";
-	cout << "┃    ┃      ┃   ┃\n";
-	cout << "┃    ┃      ┃   ┃\n";
-	cout << "┃    ┠━━━━━━┫   ┃\n";
-	cout << "┃    ┗━━━━━━┛   ┃\n";
-	cout << "┠━━━━━━━━━━━━━━━┫\n";
-	cout << "┃     휴대폰    ┃\n";
-	cout << "┗━━━━━━━━━━━━━━━┛\n";
+	int num = 8;
+	gotoxy(20, num++); cout << "┏━━━━━━━━━━━━━━━┓\n";
+	gotoxy(20, num++); cout << "┃               ┃\n";
+	gotoxy(20, num++); cout << "┃    ┏━━━━━━┫   ┃\n";
+	gotoxy(20, num++); cout << "┃    ┃      ┃   ┃\n";
+	gotoxy(20, num++); cout << "┃    ┃      ┃   ┃\n";
+	gotoxy(20, num++); cout << "┃    ┃      ┃   ┃\n";
+	gotoxy(20, num++); cout << "┃    ┠━━━━━━┫   ┃\n";
+	gotoxy(20, num++); cout << "┃    ┗━━━━━━┛   ┃\n";
+	gotoxy(20, num++); cout << "┠━━━━━━━━━━━━━━━┫\n";
+	gotoxy(20, num++); cout << "┃     휴대폰    ┃\n";
+	gotoxy(20, num++); cout << "┗━━━━━━━━━━━━━━━┛\n";
 }
 
 void gotoxy(int x, int y)
