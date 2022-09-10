@@ -284,15 +284,15 @@ int CSceneStory::floor3()
 		{
 			Sleep(300); gotoxy(10, 26); cout << "         "; gotoxy(20, 26); cout << "배터리가 없어서 충분한 설명을 하지 못할 것이 분명하다.                     ";  next = _getch();
 			Sleep(300); gotoxy(20, 26); cout << "다음 층에서 내려 계단을 통해 집까지 올라간다면                              ";
-			Sleep(300); gotoxy(20, 27); cout << "       엘리베이터보다 더 일찍 도착할 수 있다.                               ";  next = _getch();
+			gotoxy(20, 27); cout << "       엘리베이터보다 더 일찍 도착할 수 있다.                               ";  next = _getch();
 			gotoxy(20, 27); cout << "                                                                          ";
-			Sleep(300); gotoxy(20, 26); cout << "그 다음부터는 집에서 무언가 들고 나오면 싸우는 것이 가능할지도 모른다.    ";  next = _getch();
+			gotoxy(20, 26); cout << "그 다음부터는 집에서 무언가 들고 나오면 싸우는 것이 가능할지도 모른다.    ";  next = _getch();
 			Sleep(300); gotoxy(20, 26); cout << "4층에 도착하고 문이 열리자마자 뛰쳐나와, 계단으로 빠르게 집을 올라갔다."; next = _getch();
 			Sleep(500); HalfOpen1(); Sleep(500); HalfOpen2(); Sleep(500); system("cls"); Opened(4); gotoxy(92, 9); TextColor(4, 7); cout << "⑦"; TextColor(7, 0); gotoxy(92, 7); TextColor(4, 7); cout << "⑥"; TextColor(7, 0); // 열리는 동작
 			Sleep(300); gotoxy(20, 26); cout << "하지만 그 순간, 어디선가 많은 사람이 나에게 몰려와                        ";
-			Sleep(300); gotoxy(20, 27); cout << "          무언가를 맞추며 나는 정신이 희미해졌다.						     "; next = _getch();
+			gotoxy(20, 27); cout << "          무언가를 맞추며 나는 정신이 희미해졌다.						     "; next = _getch();
 			gotoxy(20, 27); cout << "                                                                          ";
-			Sleep(300); gotoxy(20, 26); cout << "이건.. 마취제인가..? 뭐지..?                                                 ";  next = _getch();
+			gotoxy(20, 26); cout << "이건.. 마취제인가..? 뭐지..?                                                 ";  next = _getch();
 			Sleep(300); gotoxy(20, 26);	cout << "희미해져가는 의식 속에 사람들 뒤 그 여자가 손에 무언가를 들고 웃고있었다.   ";  next = _getch();
 			Sleep(300); gotoxy(10, 26); cout << "         "; gotoxy(20, 26);	cout << "아.. 한명이 아니었구나..                                                   ";  next = _getch();
 			Sleep(300); gotoxy(20, 26);	cout << "절망감과 함께 의식을 잃었다.                                                ";  next = _getch();
@@ -513,7 +513,7 @@ int CSceneStory::floor7()
 		int input;
 		gotoxy(20, 26); cout << "1. 참고 생각을 정리하러 윗층으로 올라간다.                               ";
 		if (getDriver == true) { gotoxy(20, 27); cout << "2. 주머니에 있는 칼을 쓴다.                                             "; }
-		if (getDriver == true) { gotoxy(20, 28); cout << "3. 주머니에 있는 청산가리를 쓴다.                                        "; }
+		if (getDrink == true) { gotoxy(20, 28); cout << "3. 주머니에 있는 청산가리를 쓴다.                                        "; }
 
 		gotoxy(20, 29); cout << "무엇을 선택하시겠습니까? : ";
 		cin >> input;
@@ -566,8 +566,8 @@ int CSceneStory::floor7()
 			Sleep(300); gotoxy(10, 26); cout << "??  :  "; gotoxy(20, 26);	cout << "빨리 처리해야돼. 예전에도 해봤잖아?                                ";  next = _getch();
 			Sleep(300); gotoxy(10, 26); cout << "       "; gotoxy(20, 26);	cout << "정신을 차려보니 나는 이미 친구의 입을 벌려 청산가리를 쏟은 뒤였고,";
 			Sleep(300); gotoxy(20, 27);	cout << "    병과 함께 친구를 밖으로 내동댕이 친 채 엘리베이터 문이 닫혔다. ";  next = _getch();
-			gotoxy(20, 27);	cout << "                                                                 ";
-			gotoxy(20, 26);	cout << "                                                                 ";
+			gotoxy(20, 27);	cout << "                                                                  ";
+			gotoxy(20, 26);	cout << "                                                                  ";
 			getDrink = false;
 			break;
 		}
@@ -667,7 +667,8 @@ void CSceneStory::floor9()
 		Sleep(300); gotoxy(10, 26); cout << "??   : "; gotoxy(20, 26); cout << "너가 오늘 약 안먹고 나갔을때부터 다들 뜯어 말렸어야되는데ㅋㅋㅋㅋㅋ 그치?";  next = _getch();
 		Sleep(300); gotoxy(10, 26); cout << "          "; gotoxy(20, 26); cout << "....나는 여자친구가 없다. 친구도 유일하게 한 명밖에 없었다.              ";  next = _getch();
 		Sleep(300); gotoxy(10, 26); cout << "          "; gotoxy(20, 26); cout << "그리고 하나 남은 친구마저 나의 환청으로 인해 죽였다.                  ";  next = _getch();
-		Sleep(300); gotoxy(10, 26); cout << "          "; gotoxy(20, 26); cout << "주머니를 보니 친구가 준 에너지드링크가 있다.                         ";  next = _getch();
+		if(getDrink == true)
+			Sleep(300); gotoxy(10, 26); cout << "          "; gotoxy(20, 26); cout << "주머니를 보니 친구가 준 에너지드링크가 있다.                         ";  next = _getch();
 		Sleep(300); gotoxy(10, 26); cout << "          "; gotoxy(20, 26); cout << "아.. 내가 오늘 약을 안먹었구나..                                    ";  next = _getch();
 	}
 	else if(getDrink == false && choosedDrink == true)
@@ -694,8 +695,8 @@ void CSceneStory::floor9()
 void CSceneStory::floor10()
 {
 	//이거 나중에 주석처리
-	getDrink = false; getDriver = true;
-	choosedDrink = true; choosedDriver = true;
+	//getDrink = false; getDriver = true;
+	//choosedDrink = true; choosedDriver = true;
 	int next;
 	inventory(); system("cls"); Opened(10); InsideClosed(10); Sleep(500); HalfOpen1(); Sleep(500); HalfOpen2(); Sleep(500); system("cls"); Opened(10); // 열리는 동작
 
@@ -708,7 +709,7 @@ void CSceneStory::floor10()
 		Sleep(300); gotoxy(10, 26); cout << "       "; gotoxy(20, 26); cout << "의사가 몸을 떨며 말했다.                                                  ";  next = _getch();
 		Sleep(300);  system("color 40"); gotoxy(10, 26); cout << "??   : "; gotoxy(20, 26); cout << "조현병..                                                                ";  next = _getch();
 		Sleep(300); gotoxy(10, 26); cout << "       "; gotoxy(20, 26); cout << "그 때 옥상 계단문이 쾅하고 열리며 경찰들이 뛰어와 나를 제압했다.             ";  next = _getch();
-		system("cls"); system("color 07"); end(); gotoxy(20, 26); cout << "ending5. 진실                                                          ";  next = _getch(); gotoxy(1, 34);
+		system("cls"); system("color 07"); end(); gotoxy(20, 26); cout << "ending5. 진실                                                          ";
 
 	}
 	else if (getDrink == false && choosedDrink == true)
@@ -721,7 +722,7 @@ void CSceneStory::floor10()
 		Sleep(300); gotoxy(10, 26); cout << "       "; gotoxy(20, 26); cout << "그 때 옥상 계단문이 쾅하고 열리며 의사와 간호사, 경호원들이 뛰어올라왔다.  ";  next = _getch();
 		Sleep(300); gotoxy(10, 26); cout << "       "; gotoxy(20, 26); cout << "큰 소리와 함께 나는 제압되었고, 주변에서 사람들이 수군거리는 소리가 들렸다.";  next = _getch();
 		Sleep(300); gotoxy(10, 26); cout << "??   : "; gotoxy(20, 26); cout << "\"저러니까 정신병원에 오지..\"                                              ";  next = _getch();
-		Sleep(300); system("cls"); end(); gotoxy(20, 26); cout << "ending4. 정신병원                       ";  next = _getch(); gotoxy(1, 34);
+		Sleep(300); system("cls"); end(); gotoxy(20, 26); cout << "ending4. 정신병원                       ";
 	}
 	else
 	{

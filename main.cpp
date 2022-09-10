@@ -26,15 +26,15 @@ int main()
 
 	floor1: story.floor1();
 	floor2: story.floor2();
-	floor3: story.floor3();
+	floor3:
 	if (story.floor3() < 0) goto end;
-	floor4: story.floor4();
+	floor4:
 	if (story.floor4() < 0) goto end;
 	floor56: story.floor5t6();
-	floor7: story.floor7();
+	floor7:
 	if (story.floor7() < 0) goto end;
 	floor8: story.floor8();
 	floor9: story.floor9();
-	floor10: story.floor10();
-end:;
+floor10: story.floor10();
+end: gotoxy(1, 34);
 }
